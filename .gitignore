@@ -79,4 +79,10 @@ core/hadoop-common/target/
 publicService/workspace/client/workspace-httpclient/target/
 userControl/target/
 
-
+# vscode project files
+.vscode
+.project
+.classpath
+.settings
+.factorypath
+target
