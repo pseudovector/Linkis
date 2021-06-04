@@ -83,3 +83,10 @@ publicService/workspace/client/workspace-httpclient/target/
 userControl/target/
 
 
+# vscode project files
+.vscode
+.project
+.classpath
+.factorypath
+.bloop
+.metals
