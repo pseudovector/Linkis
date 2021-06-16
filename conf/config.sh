@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 shellDir=`dirname $0`
 workDir=`cd ${shellDir}/..;pwd`

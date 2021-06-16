@@ -85,8 +85,8 @@ echo "Begin to start $SERVER_NAME"
 SERVER_PATH=${APP_PREFIX}${SERVER_NAME}
 
 SERVER_BIN=${LINKIS_INSTALL_HOME}/${SERVER_PATH}/bin
-SERVER_LOCAL_START_CMD="dos2unix ${SERVER_BIN}/* > /dev/null 2>&1; dos2unix ${SERVER_BIN}/../conf/* > /dev/null 2>&1; sh ${SERVER_BIN}/start-${SERVER_NAME}.sh"
-SERVER_REMOTE_START_CMD="source /etc/profile;source ~/.bash_profile;cd ${SERVER_BIN}; dos2unix ./* > /dev/null 2>&1; dos2unix ../conf/* > /dev/null 2>&1; sh start-${SERVER_NAME}.sh > /dev/null 2>&1"
+SERVER_LOCAL_START_CMD="dos2unix ${SERVER_BIN}/* > /dev/null 2>&1; dos2unix ${SERVER_BIN}/../conf/* > /dev/null 2>&1; bash ${SERVER_BIN}/start-${SERVER_NAME}.sh"
+SERVER_REMOTE_START_CMD="source /etc/profile;source ~/.bash_profile;cd ${SERVER_BIN}; dos2unix ./* > /dev/null 2>&1; dos2unix ../conf/* > /dev/null 2>&1; bash start-${SERVER_NAME}.sh > /dev/null 2>&1"
 if test -z "$SERVER_IP"
 then
   SERVER_IP=$local_host
@@ -232,7 +232,7 @@ if ! executeCMD $SERVER_IP "test -e $SERVER_BIN"; then
   return
 fi
 
-sh $workDir/bin/checkServices.sh $SERVER_NAME $SERVER_IP $SERVER_PORT
+bash $workDir/bin/checkServices.sh $SERVER_NAME $SERVER_IP $SERVER_PORT
 isSuccess "start $SERVER_NAME "
 echo "<-------------------------------->"
 sleep 5

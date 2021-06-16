@@ -81,8 +81,8 @@ echo "<-------------------------------->"
 echo "Begin to stop $SERVER_NAME"
 SERVER_PATH=${APP_PREFIX}${SERVER_NAME}
 SERVER_BIN=${LINKIS_INSTALL_HOME}/${SERVER_PATH}/bin
-SERVER_LOCAL_STOP_CMD="sh ${SERVER_BIN}/stop-${SERVER_NAME}.sh"
-SERVER_REMOTE_STOP_CMD="source /etc/profile;source ~/.bash_profile;cd ${SERVER_BIN}; sh stop-${SERVER_NAME}.sh "
+SERVER_LOCAL_STOP_CMD="bash ${SERVER_BIN}/stop-${SERVER_NAME}.sh"
+SERVER_REMOTE_STOP_CMD="source /etc/profile;source ~/.bash_profile;cd ${SERVER_BIN}; bash stop-${SERVER_NAME}.sh "
 if test -z "$SERVER_IP"
 then
   SERVER_IP=$local_host

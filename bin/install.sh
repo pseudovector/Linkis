@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # Copyright 2019 WeBank
 #
@@ -108,7 +108,7 @@ need_cmd() {
 
 
 
-sh ${workDir}/bin/checkEnv.sh
+bash ${workDir}/bin/checkEnv.sh
 isSuccess "check env"
 
 ##load config
